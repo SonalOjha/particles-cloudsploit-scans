@@ -1,6 +1,6 @@
 # particles-cloudsploit-scans
 
-![logo](https://raw.githubusercontent.com/SungardAS/condensation/master/docs/images/condensation_logo.png)
+[![logo](https://raw.githubusercontent.com/SungardAS/condensation/master/docs/images/condensation_logo.png)](https://github.com/SungardAS/condensation)
 
 [![NPM](https://nodei.co/npm/condensation.png)](https://nodei.co/npm/particles-cloudsploit-scans/)
 
