@@ -8,6 +8,7 @@ var config = {
         bucket: 'particles-cloudsploit-scans.us-east-1'
       },
       prefix: gitrev.branch(),
+      clean: true,
       validate: true,
       create: true
     },
@@ -17,6 +18,7 @@ var config = {
         bucket: 'particles-cloudsploit-scans.us-west-2'
       },
       prefix: gitrev.branch(),
+      clean: true,
       validate: true,
       create: true
     },
@@ -26,6 +28,7 @@ var config = {
         bucket: 'particles-cloudsploit-scans.us-west-1'
       },
       prefix: gitrev.branch(),
+      clean: true,
       validate: true,
       create: true
     },
@@ -35,6 +38,7 @@ var config = {
         bucket: 'particles-cloudsploit-scans.eu-west-1'
       },
       prefix: gitrev.branch(),
+      clean: true,
       validate: true,
       create: true
     },
@@ -44,6 +48,7 @@ var config = {
         bucket: 'particles-cloudsploit-scans.eu-central-1'
       },
       prefix: gitrev.branch(),
+      clean: true,
       validate: true,
       create: true
     },
@@ -53,6 +58,7 @@ var config = {
         bucket: 'particles-cloudsploit-scans.ap-southeast-1'
       },
       prefix: gitrev.branch(),
+      clean: true,
       validate: true,
       create: true
     },
@@ -62,15 +68,16 @@ var config = {
         bucket: 'particles-cloudsploit-scans.ap-southeast-2'
       },
       prefix: gitrev.branch(),
+      clean: true,
       validate: true,
-      create: true,
-      clean: true
+      create: true
     },
     {
       aws: {
         region: 'ap-northeast-1',
         bucket: 'particles-cloudsploit-scans.ap-northeast-1'
       },
+      clean: true,
       prefix: gitrev.branch(),
       validate: true,
       create: true
@@ -80,6 +87,7 @@ var config = {
         region: 'sa-east-1',
         bucket: 'particles-cloudsploit-scans.sa-east-1'
       },
+      clean: true,
       prefix: gitrev.branch(),
       validate: true,
       create: true
