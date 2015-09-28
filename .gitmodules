@@ -1,3 +1,4 @@
 [submodule "cloudsploit-scans"]
 	path = cloudsploit-scans
-	url = https://github.com/cloudsploit/scans.git
+  branch = master
+	url = https://github.com/kmcgrath/scans.git
