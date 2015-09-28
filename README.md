@@ -19,8 +19,35 @@ to any S3 bucket.  The template will always reference the code that it
 was deployed with.  The stack can be updated to add permissions or to
 deploy new releases of CloudSploit scans.
 
+## Use
 
-## Packaged Projects
+### Quick Start
+
+Copy one of the links listed in `Packaged Project`
+and enter that as the S3 Template URL for CloudFormation.
+
+### Build
+
+Must have node.js 0.12 or later.
+
+1. Clone the repository
+2. Create a `local.js` file in `config` with buckets that you own
+3. Add AWS credentials to your environment.  Either by IAM Profile,
+   Envionment Variables or AWS Properties file.
+4. Build:
+
+    > git clone https://github.com/SungardAS/particles-cloudsploit-scans
+    > cd particles-cloudsploit-scans
+    > npm install
+    > ./node_modules/.bin/gulp condensation:build
+
+5. Deploy:
+
+    > ./node_modules/.bin/gulp condensation:deploy
+
+
+
+## Packaged Project
 
 Using condensation the CloudFormation Template and CloudSploit assets
 have been deployed to every S3 region
