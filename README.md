@@ -35,16 +35,19 @@ Must have node.js 0.12 or later.
 3. Add AWS credentials to your environment.  Either by IAM Profile,
    Envionment Variables or AWS Properties file.
 4. Build:
-
-    $ git clone https://github.com/SungardAS/particles-cloudsploit-scans
-    $ cd particles-cloudsploit-scans
-    $ npm install
-    $ ./node_modules/.bin/gulp condensation:build
-
+    ```
+        > git clone https://github.com/SungardAS/particles-cloudsploit-scans
+        
+        > cd particles-cloudsploit-scans
+        
+        > npm install
+        
+        > ./node_modules/.bin/gulp condensation:build
+    ```
 5. Deploy:
-
-    $ ./node_modules/.bin/gulp condensation:deploy
-
+```
+    > ./node_modules/.bin/gulp condensation:deploy
+```
 
 
 ## Packaged Project
