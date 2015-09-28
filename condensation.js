@@ -1,5 +1,7 @@
 var git = require('gulp-git'),
-var gulp = require('gulp'),
+gulp = require('gulp'),
+vfs = require('vinyl-fs'),
+zip = require('gulp-zip'),
 exec = require('child_process').exec;
 
 module.exports.initialize = function(cb) {
@@ -8,8 +10,8 @@ module.exports.initialize = function(cb) {
     if (error) return cb(error);
   });
 
-  gulp.src('cloudsploit-scans/**')
+  vfs.src('./cloudsploit-scans/**')
   .pipe(zip('cloudsploit_scans.zip'))
-  .pipe(gulp.dest('particles/assets'))
+  .pipe(gulp.dest('./particles/assets'))
   .on('end', cb);
 };

@@ -12,11 +12,14 @@
     "condensation": "^0.4.6",
     "gulp": "^3.9.0"
   },
-  "keywords": ["condensation-particles"],
+  "keywords": [
+    "condensation-particles"
+  ],
   "dependencies": {
     "config": "^1.16.0",
     "git-rev-sync": "^1.4.0",
     "gulp-git": "^1.4.0",
-    "gulp-zip": "^3.0.2"
+    "gulp-zip": "^3.0.2",
+    "vinyl-fs": "^2.1.1"
   }
 }

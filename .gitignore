@@ -3,3 +3,4 @@ config/local.js
 dist
 node_modules
 particles/cloudsploit_scans.zip
+particles/assets/*.zip
