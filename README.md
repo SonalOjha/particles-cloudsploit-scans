@@ -47,7 +47,9 @@ Must have node.js 0.12 or later.
 5. Deploy:
     ```
         > ./node_modules/.bin/gulp condensation:deploy
+        
     ```
+
 
 
 ## Packaged Project
