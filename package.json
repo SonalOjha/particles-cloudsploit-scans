@@ -12,7 +12,7 @@
     "condensation-particles"
   ],
   "dependencies": {
-    "condensation": "^0.4.6",
+    "condensation": "^0.4.8",
     "gulp": "^3.9.0",
     "config": "^1.16.0",
     "git-rev-sync": "^1.4.0",
