@@ -1,0 +1,22 @@
+{
+  "name": "particles-cloudsploit-scans",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin McGrath",
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "condensation": "^0.4.6",
+    "gulp": "^3.9.0"
+  },
+  "keywords": ["condensation-particles"],
+  "dependencies": {
+    "config": "^1.16.0",
+    "git-rev-sync": "^1.4.0",
+    "gulp-git": "^1.4.0",
+    "gulp-zip": "^3.0.2"
+  }
+}
