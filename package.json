@@ -20,6 +20,7 @@
     "git-rev-sync": "^1.4.0",
     "gulp-git": "^1.4.0",
     "gulp-zip": "^3.0.2",
+    "particles-common-core": "^0.3.2",
     "vinyl-fs": "^2.1.1"
   }
 }
