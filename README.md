@@ -2,7 +2,7 @@
 
 [![logo](https://raw.githubusercontent.com/SungardAS/condensation/master/docs/images/condensation_logo.png)](https://github.com/SungardAS/condensation)
 
-[![NPM](https://nodei.co/npm/condensation.png)](https://nodei.co/npm/particles-cloudsploit-scans/)
+[![NPM](https://nodei.co/npm/particles-cloudsploit-scans.png)](https://nodei.co/npm/particles-cloudsploit-scans/)
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/SungardAS/condensation?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Dependency
@@ -57,8 +57,8 @@ Must have node.js 0.12 or later.
 Using condensation the CloudFormation Template and CloudSploit assets
 have been deployed to every S3 region lambda is available.
 
-* us-east-1 [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=cloudsploit-scans&templateURL=http://particles-cloudsploit-scans.us-east-1.s3.amazonaws.com/develop/particles/cftemplates/lambda.template.json)
-* us-west-2 [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=cloudsploit-scans&templateURL=http://particles-cloudsploit-scans.us-west-2.s3.amazonaws.com/develop/particles/cftemplates/lambda.template.json)
-* eu-west-1 [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=cloudsploit-scans&templateURL=http://particles-cloudsploit-scans.eu-west-1.s3.amazonaws.com/develop/particles/cftemplates/lambda.template.json)
-* ap-northeast-1 [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new?stackName=cloudsploit-scans&templateURL=http://particles-cloudsploit-scans.ap-northeast-1.s3.amazonaws.com/develop/particles/cftemplates/lambda.template.json)
+* us-east-1 [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=cloudsploit-scans&templateURL=http://particles-cloudsploit-scans.us-east-1.s3.amazonaws.com/master/particles/cftemplates/lambda.template.json)
+* us-west-2 [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=cloudsploit-scans&templateURL=http://particles-cloudsploit-scans.us-west-2.s3.amazonaws.com/master/particles/cftemplates/lambda.template.json)
+* eu-west-1 [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=cloudsploit-scans&templateURL=http://particles-cloudsploit-scans.eu-west-1.s3.amazonaws.com/master/particles/cftemplates/lambda.template.json)
+* ap-northeast-1 [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new?stackName=cloudsploit-scans&templateURL=http://particles-cloudsploit-scans.ap-northeast-1.s3.amazonaws.com/master/particles/cftemplates/lambda.template.json)
 
