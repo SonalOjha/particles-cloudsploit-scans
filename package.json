@@ -1,6 +1,6 @@
 {
   "name": "particles-cloudsploit-scans",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "[Condensation](https://github.com/SungardAS/condensation) particles that create a CloudFormation project for CloudSploit [scans](https://github.com/cloudsploit/scans)",
   "main": "index.js",
   "scripts": {
