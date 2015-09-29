@@ -23,8 +23,8 @@ deploy new releases of CloudSploit scans.
 
 ### Quick Start
 
-Copy one of the links listed in `Packaged Project`
-and enter that as the S3 Template URL for CloudFormation.
+Use the `Launch Stack` links in the `Packaged Project` section of this
+README.
 
 ### Build
 
