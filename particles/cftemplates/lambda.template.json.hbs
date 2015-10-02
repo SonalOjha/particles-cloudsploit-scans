@@ -7,12 +7,12 @@
 
   {{resource "lambda" logicalId="Lambda"}}
 
-  {{output "lambda_name" logicalId="LambdaName"}}
+  {{output "lambda_name" logicalId="LambdaName" lambdaLogicalId="Lambda"}}
 
-  {{output "lambda_arn" logicalId="LambdaArn"}}
+  {{output "lambda_arn" logicalId="LambdaArn" lambdaLogicalId="Lambda"}}
 
-  {{output "role_name" logicalId="ExecutionRoleName" condition="ExecutionRoleIsEmpty"}}
+  {{output "role_name" logicalId="ExecutionRoleName" roleLogicalId="LambdaExecutionRole" condition="ExecutionRoleIsEmpty"}}
 
-  {{output "role_arn" logicalId="ExecutionRoleArn" condition="ExecutionRoleIsEmpty"}}
+  {{output "role_arn" logicalId="ExecutionRoleArn" roleLogicalId="LambdaExecutionRole" condition="ExecutionRoleIsEmpty"}}
 
 {{/layout}}
