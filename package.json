@@ -6,8 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Kevin McGrath",
-  "license": "Apache 2.0",
+  "author": {
+    "name": "Kevin McGrath",
+    "email": "kevin.mcgrath@sungardas.com"
+  },
+  "license": "Apache-2.0",
   "keywords": [
     "condensation-particles"
   ],
@@ -18,7 +21,7 @@
     "git-rev-sync": "^1.4.0",
     "gulp-git": "^1.4.0",
     "gulp-zip": "^3.0.2",
-    "particles-common-core": "^0.3.2",
+    "particles-common-core": "^0.3.4",
     "vinyl-fs": "^2.1.1"
   }
 }

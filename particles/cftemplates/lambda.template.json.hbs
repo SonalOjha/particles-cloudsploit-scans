@@ -9,67 +9,51 @@
   }}
   {{condition "module:particles-common-core" "is_empty" logicalId="ExecutionRoleIsEmpty" parameterLogicalId="ExecutionRole"}}
 
-  {{#resource logicalId='LambdaExecutionRole'}}
-    "Type": "AWS::IAM::Role",
-    "Condition": "ExecutionRoleIsEmpty",
-    "Properties": {
-      "AssumeRolePolicyDocument": {
-        "Version": "2012-10-17",
-        "Statement": [{
-          "Effect": "Allow",
-          "Principal": {"Service": ["lambda.amazonaws.com"]},
-          "Action": ["sts:AssumeRole"]
-        }]
-      },
-      "Path": "/",
-      "Policies": [{
-        "PolicyName": "root",
-        "PolicyDocument": {
-          "Version": "2012-10-17",
-          "Statement": [{
-            "Action": [
-                    "cloudtrail:DescribeTrails",
-                    "s3:GetBucketVersioning",
-                    "s3:ListAllMyBuckets",
-                    "s3:GetBucketAcl",
-                    "ec2:DescribeAccountAttributes",
-                    "ec2:DescribeAddresses",
-                    "ec2:DescribeInstances",
-                    "ec2:DescribeSecurityGroups",
-                    "iam:ListServerCertificates",
-                    "iam:GetAccountPasswordPolicy",
-                    "iam:GetAccountSummary",
-                    "iam:GetAccessKeyLastUsed",
-                    "iam:GetGroup",
-                    "iam:ListMFADevices",
-                    "iam:ListUsers",
-                    "iam:ListGroups",
-                    "iam:ListAccessKeys",
-                    "iam:ListVirtualMFADevices",
-                    "elasticloadbalancing:DescribeLoadBalancerPolicies",
-                    "elasticloadbalancing:DescribeLoadBalancers",
-                    "route53domains:ListDomains",
-                    "rds:describeDBInstances"
-            ],
-            "Effect": "Allow",
-            "Resource": "*"
-          }]
-        }
-      }]
-    }
-  {{/resource}}
+  {{
+    resource "module:particles-common-core" "base"
+    logicalId="LambdaExecutionRole"
+    type="AWS::IAM::Role"
+    condition="ExecutionRoleIsEmpty"
+    properties=(partial "lambda_execution_role_properties")
+  }}
 
-  {{#resource logicalId='Lambda'}}
-    "Type": "AWS::Lambda::Function",
-    "Properties": {
-      "Handler": "lambda.handler",
-      "Role": { "Fn::GetAtt" : ["LambdaExecutionRole", "Arn"] },
-      "Code": {
-        "S3Bucket": "{{s3.bucket}}",
-        "S3Key": "{{assetPath 'cloudsploit_scans.zip'}}"
-      },
-      "Runtime": "nodejs",
-      "Timeout": "25"
-    }
-  {{/resource}}
+  {{
+    resource "module:particles-common-core" "base"
+    logicalId='Lambda'
+    type="AWS::Lambda::Function"
+    properties=(
+      partial "lambda_properties"
+      rolePropertyValue=(partial "lambda_role_property_if")
+    )
+  }}
+  "Role": {{partial "module:particles-common-core" "fn_get_att" logicalId=roleLogicalId attributeName="Arn" }},
+
+  {{
+    output 'module:particles-common-core' 'base'
+    logicalId="LambdaName"
+    value=(partial 'module:particles-common-core' 'ref' logicalId='Lambda')
+    description="Name of the Lambda function"
+  }}
+
+  {{
+    output 'module:particles-common-core' 'base'
+    logicalId="LambdaArn"
+    value=(partial 'module:particles-common-core' 'fn_get_att' logicalId='Lambda' attributeName="Arn")
+    description="ARN of the Lambda function"
+  }}
+
+  {{
+    output 'module:particles-common-core' 'base'
+    logicalId="LambdaName"
+    value=(partial 'module:particles-common-core' 'ref' logicalId='LambdaExecutionRole')
+    description="Name of the Execution Role"
+  }}
+
+  {{
+    output 'module:particles-common-core' 'base'
+    logicalId="RoleArn"
+    value=(partial 'module:particles-common-core' 'fn_get_att' logicalId='LambdaExecutionRole' attributeName="Arn")
+    description="ARN of the Execution Role"
+  }}
+
 {{/layout}}

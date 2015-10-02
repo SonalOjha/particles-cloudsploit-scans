@@ -1,0 +1,11 @@
+{
+  "Handler": "lambda.handler",
+  "Role": {{rolePropertyValue}},
+  "Code": {
+    "S3Bucket": "{{s3.bucket}}",
+    "S3Key": "{{assetPath 'cloudsploit_scans.zip'}}"
+  },
+  "Runtime": "nodejs",
+  "Timeout": "25"
+}
+
