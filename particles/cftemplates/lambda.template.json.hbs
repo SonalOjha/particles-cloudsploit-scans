@@ -1,75 +1,18 @@
 {{#layout}}
 
-  {{
-    parameter "module:particles-common-core" "base"
-    type="String"
-    logicalId="ExecutionRole"
-    default=""
-    description="[optional] If no role is provided one will be created with a minimal policy statement for CloudSploit to run within the deployed to account"
-  }}
+  {{parameter "execution_role" logicalId="ExecutionRole"}}
   {{condition "module:particles-common-core" "is_empty" logicalId="ExecutionRoleIsEmpty" parameterLogicalId="ExecutionRole"}}
 
-  {{#resource logicalId='LambdaExecutionRole'}}
-    "Type": "AWS::IAM::Role",
-    "Condition": "ExecutionRoleIsEmpty",
-    "Properties": {
-      "AssumeRolePolicyDocument": {
-        "Version": "2012-10-17",
-        "Statement": [{
-          "Effect": "Allow",
-          "Principal": {"Service": ["lambda.amazonaws.com"]},
-          "Action": ["sts:AssumeRole"]
-        }]
-      },
-      "Path": "/",
-      "Policies": [{
-        "PolicyName": "root",
-        "PolicyDocument": {
-          "Version": "2012-10-17",
-          "Statement": [{
-            "Action": [
-                    "cloudtrail:DescribeTrails",
-                    "s3:GetBucketVersioning",
-                    "s3:ListAllMyBuckets",
-                    "s3:GetBucketAcl",
-                    "ec2:DescribeAccountAttributes",
-                    "ec2:DescribeAddresses",
-                    "ec2:DescribeInstances",
-                    "ec2:DescribeSecurityGroups",
-                    "iam:ListServerCertificates",
-                    "iam:GetAccountPasswordPolicy",
-                    "iam:GetAccountSummary",
-                    "iam:GetAccessKeyLastUsed",
-                    "iam:GetGroup",
-                    "iam:ListMFADevices",
-                    "iam:ListUsers",
-                    "iam:ListGroups",
-                    "iam:ListAccessKeys",
-                    "iam:ListVirtualMFADevices",
-                    "elasticloadbalancing:DescribeLoadBalancerPolicies",
-                    "elasticloadbalancing:DescribeLoadBalancers",
-                    "route53domains:ListDomains",
-                    "rds:describeDBInstances"
-            ],
-            "Effect": "Allow",
-            "Resource": "*"
-          }]
-        }
-      }]
-    }
-  {{/resource}}
+  {{resource "lambda_execution_role" logicalId="LambdaExecutionRole" condition="ExecutionRoleIsEmpty"}}
 
-  {{#resource logicalId='Lambda'}}
-    "Type": "AWS::Lambda::Function",
-    "Properties": {
-      "Handler": "lambda.handler",
-      "Role": { "Fn::GetAtt" : ["LambdaExecutionRole", "Arn"] },
-      "Code": {
-        "S3Bucket": "{{s3.bucket}}",
-        "S3Key": "{{assetPath 'cloudsploit_scans.zip'}}"
-      },
-      "Runtime": "nodejs",
-      "Timeout": "25"
-    }
-  {{/resource}}
+  {{resource "lambda" logicalId="Lambda"}}
+
+  {{output "lambda_name" logicalId="LambdaName" lambdaLogicalId="Lambda"}}
+
+  {{output "lambda_arn" logicalId="LambdaArn" lambdaLogicalId="Lambda"}}
+
+  {{output "role_name" logicalId="ExecutionRoleName" roleLogicalId="LambdaExecutionRole" condition="ExecutionRoleIsEmpty"}}
+
+  {{output "role_arn" logicalId="ExecutionRoleArn" roleLogicalId="LambdaExecutionRole" condition="ExecutionRoleIsEmpty"}}
+
 {{/layout}}

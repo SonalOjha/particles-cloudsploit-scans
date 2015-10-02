@@ -1,0 +1,8 @@
+{{
+  resource "module:particles-common-core" "base"
+  type="AWS::Lambda::Function"
+  properties=(
+    partial "lambda_properties"
+    rolePropertyValue=(partial "lambda_role_property_if")
+  )
+}}
