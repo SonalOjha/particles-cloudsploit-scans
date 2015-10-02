@@ -3,7 +3,7 @@
   {{parameter "execution_role" logicalId="ExecutionRole"}}
   {{condition "module:particles-common-core" "is_empty" logicalId="ExecutionRoleIsEmpty" parameterLogicalId="ExecutionRole"}}
 
-  {{resource "lambda_execution_role" logicalId="LambdaExecutionRole"}}
+  {{resource "lambda_execution_role" logicalId="LambdaExecutionRole" condition="ExecutionRoleIsEmpty"}}
 
   {{resource "lambda" logicalId="Lambda"}}
 

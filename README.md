@@ -66,6 +66,42 @@ npm installl and then packaging.
 
 The master template for all cloudsploit resources
 
+### outputs
+
+#### lambda\_arn
+
+**Parameters**
+
+`lambdaLogicalId {String}` **required** Logical ID of the Lambda
+resource
+
+#### lambda\_name
+
+**Parameters**
+
+`lambdaLogicalId {String}` **required** Logical ID of the Lambda
+resource
+
+#### role\_arn
+
+**Parameters**
+
+`roleLogicalId {String}` **required** Logical ID of the Lambda
+Execution Role resource
+
+#### role\_name
+
+**Parameters**
+
+`roleLogicalId {String}` **required** Logical ID of the Lambda
+Execution Role resource
+
+### parameters
+
+#### execution\_role
+
+A parameter for an existing IAM Role to use with the lambda function.
+
 ### partials
 
 #### lambda\_execution\_role\_properties
@@ -80,6 +116,16 @@ Properties for the Lambda function.
 
 A Fn::If statement to choose between using the a Parameter or Resource
 for the execution role
+
+### resources
+
+#### lambda
+
+The resource that defines the lambda function
+
+#### lambda\_execution\_role
+
+The resource that defines the role the lambda function will use
 
 
 ## Packaged Project

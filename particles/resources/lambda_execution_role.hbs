@@ -1,6 +1,5 @@
 {{
   resource "module:particles-common-core" "base"
   type="AWS::IAM::Role"
-  condition="ExecutionRoleIsEmpty"
   properties=(partial "lambda_execution_role_properties")
 }}
