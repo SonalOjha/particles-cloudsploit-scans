@@ -1,13 +1,8 @@
-{{#resource logicalId='Lambda'}}
-  "Type": "AWS::Lambda::Function",
-  "Properties": {
-    "Handler": "lambda.handler",
-    "Role": { "Fn::GetAtt" : ["{{lambdaExecutionRoleLogicalId}}", "Arn"] },
-    "Code": {
-      "S3Bucket": "{{s3.bucket}}",
-      "S3Key": "{{assetPath 'cloudsploit_scans.zip'}}"
-    },
-    "Runtime": "nodejs",
-    "Timeout": "25"
-  }
-{{/resource}}
+{{
+  resource "module:particles-common-core" "base"
+  type="AWS::Lambda::Function"
+  properties=(
+    partial "lambda_properties"
+    rolePropertyValue=(partial "lambda_role_property_if")
+  )
+}}
