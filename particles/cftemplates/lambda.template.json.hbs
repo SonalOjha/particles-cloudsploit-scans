@@ -10,7 +10,8 @@
 
   {{resource "lambda_execution_role" logicalId="LambdaExecutionRole" condition="ExecutionRoleIsEmpty"}}
 
-  {{resource "lambda" logicalId="Lambda" functionHandler="Handler" functionMemorySize="Memory" functionTimeout="Timeout" runtimeEnvironment="Environment"}}
+  {{resource "lambda" logicalId="Lambda" functionHandler="Handler" functionMemorySize="Memory" functionTimeout="Timeout" runtimeEnvironment="Environment"
+    executionRoleParameterId="ExecutionRole" executionRoleLogicalId="LambdaExecutionRole"}}
 
   {{output "lambda_name" logicalId="LambdaName" functionLogicalId="Lambda"}}
 
