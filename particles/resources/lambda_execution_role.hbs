@@ -1,5 +1,3 @@
 {{
-  resource "module:particles-common-core" "base"
-  type="AWS::IAM::Role"
-  properties=(partial "lambda_execution_role_properties")
+  resource "module:particles-lambda" "simple/function_execution_role"
 }}

@@ -9,7 +9,7 @@ var config = {
       },
       prefix: gitrev.branch(),
       clean: true,
-      validate: true,
+      validate: false,
       create: true
     },
     {
@@ -19,7 +19,7 @@ var config = {
       },
       prefix: gitrev.branch(),
       clean: true,
-      validate: true,
+      validate: false,
       create: true
     },
     {
@@ -29,7 +29,7 @@ var config = {
       },
       prefix: gitrev.branch(),
       clean: true,
-      validate: true,
+      validate: false,
       create: true
     },
     {
@@ -39,7 +39,7 @@ var config = {
       },
       prefix: gitrev.branch(),
       clean: true,
-      validate: true,
+      validate: false,
       create: true
     },
     {
@@ -49,7 +49,7 @@ var config = {
       },
       prefix: gitrev.branch(),
       clean: true,
-      validate: true,
+      validate: false,
       create: true
     },
     {
@@ -59,7 +59,7 @@ var config = {
       },
       prefix: gitrev.branch(),
       clean: true,
-      validate: true,
+      validate: false,
       create: true
     },
     {
@@ -69,7 +69,7 @@ var config = {
       },
       prefix: gitrev.branch(),
       clean: true,
-      validate: true,
+      validate: false,
       create: true
     },
     {
@@ -79,7 +79,7 @@ var config = {
       },
       clean: true,
       prefix: gitrev.branch(),
-      validate: true,
+      validate: false,
       create: true
     },
     {
@@ -89,11 +89,13 @@ var config = {
       },
       clean: true,
       prefix: gitrev.branch(),
-      validate: true,
+      validate: false,
       create: true
     }
   ],
-  dist: 'dist'
+  dist: 'dist',
+  lambdaSrcModule: 'particles-cloudsploit-scans',
+  lambdaSrc: 'cloudsploit-scans'
 };
 
 module.exports = config;

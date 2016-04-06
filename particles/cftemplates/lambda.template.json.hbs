@@ -1,18 +1,23 @@
 {{#layout}}
 
-  {{parameter "execution_role" logicalId="ExecutionRole"}}
+  {{parameter "func_execution_role" logicalId="ExecutionRole"}}
+  {{parameter "func_runtime_environments" logicalId="Environment"}}
+  {{parameter "func_handler" logicalId="Handler"}}
+  {{parameter "func_memory_size" logicalId="Memory"}}
+  {{parameter "func_timeout" logicalId="Timeout"}}
+
   {{condition "module:particles-common-core" "is_empty" logicalId="ExecutionRoleIsEmpty" parameterLogicalId="ExecutionRole"}}
 
   {{resource "lambda_execution_role" logicalId="LambdaExecutionRole" condition="ExecutionRoleIsEmpty"}}
 
-  {{resource "lambda" logicalId="Lambda"}}
+  {{resource "lambda" logicalId="Lambda" functionHandler="Handler" functionMemorySize="Memory" functionTimeout="Timeout" runtimeEnvironment="Environment"}}
 
-  {{output "lambda_name" logicalId="LambdaName" lambdaLogicalId="Lambda"}}
+  {{output "lambda_name" logicalId="LambdaName" functionLogicalId="Lambda"}}
 
-  {{output "lambda_arn" logicalId="LambdaArn" lambdaLogicalId="Lambda"}}
+  {{output "lambda_arn" logicalId="LambdaArn" functionLogicalId="Lambda"}}
 
-  {{output "role_name" logicalId="ExecutionRoleName" roleLogicalId="LambdaExecutionRole" condition="ExecutionRoleIsEmpty"}}
+  {{output "func_role_name" logicalId="ExecutionRoleName" roleLogicalId="LambdaExecutionRole" condition="ExecutionRoleIsEmpty"}}
 
-  {{output "role_arn" logicalId="ExecutionRoleArn" roleLogicalId="LambdaExecutionRole" condition="ExecutionRoleIsEmpty"}}
+  {{output "func_role_arn" logicalId="ExecutionRoleArn" roleLogicalId="LambdaExecutionRole" condition="ExecutionRoleIsEmpty"}}
 
 {{/layout}}

@@ -1,5 +1,3 @@
 {{
-  output "module:particles-common-core" "base"
-  value=(partial "module:particles-common-core" "fn_get_att" logicalId=lambdaLogicalId attributeName="Arn")
-  description="ARN of the Lambda function"
+  output 'module:particles-lambda' 'function_arn'
 }}
