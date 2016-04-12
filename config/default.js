@@ -93,9 +93,7 @@ var config = {
       create: true
     }
   ],
-  dist: 'dist',
-  lambdaSrcModule: 'particles-cloudsploit-scans',
-  lambdaSrc: 'cloudsploit-scans'
+  dist: 'dist'
 };
 
 module.exports = config;
