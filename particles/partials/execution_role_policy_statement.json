@@ -1,0 +1,28 @@
+[{
+  "Action": [
+    "cloudtrail:DescribeTrails",
+    "s3:GetBucketVersioning",
+    "s3:ListAllMyBuckets",
+    "s3:GetBucketAcl",
+    "ec2:DescribeAccountAttributes",
+    "ec2:DescribeAddresses",
+    "ec2:DescribeInstances",
+    "ec2:DescribeSecurityGroups",
+    "iam:ListServerCertificates",
+    "iam:GetAccountPasswordPolicy",
+    "iam:GetAccountSummary",
+    "iam:GetAccessKeyLastUsed",
+    "iam:GetGroup",
+    "iam:ListMFADevices",
+    "iam:ListUsers",
+    "iam:ListGroups",
+    "iam:ListAccessKeys",
+    "iam:ListVirtualMFADevices",
+    "elasticloadbalancing:DescribeLoadBalancerPolicies",
+    "elasticloadbalancing:DescribeLoadBalancers",
+    "route53domains:ListDomains",
+    "rds:describeDBInstances"
+  ],
+  "Effect": "Allow",
+  "Resource": "*"
+}]
